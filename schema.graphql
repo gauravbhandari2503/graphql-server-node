@@ -2,8 +2,19 @@ type Todo {
     id: ID!
     title: String!
     completed: Boolean
+    user: User
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    username: String!
+    website: String!
 }
 
 type Query {
-    todos: [Todo]
+    getTodos: [Todo]
+    getAllUsers: [User]
+    getUser(id: ID!): User
 }
